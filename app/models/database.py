@@ -1,7 +1,7 @@
 import os 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column , Integer, String
-from sqlalchemy import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 
 SQLALCHEMY_DATABASE_URL = os.getenv('postgresql://neondb_owner:npg_2e8oxAOlhayc@ep-fancy-mud-apjbkmcm-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
