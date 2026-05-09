@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from app.models.database import SessionLocal,Livro, init_db
 from pydantic import BaseModel
 
-app = FastAPI
+app = FastAPI()
 
 init_db()
 
