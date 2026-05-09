@@ -9,9 +9,9 @@ SQLALCHEMY_DATABASE_URL = os.getenv('postgresql://neondb_owner:npg_2e8oxAOlhayc@
 if SQLALCHEMY_DATABASE_URL.startswith('postgres://'):
     SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace("postgres://","postgres://",1)
 
-engine = create_engine
-SessionLocal = sessionmaker(autocommit= False, autoflush = False, bind = engine)
-Base =  declarative_base
+engine = create_engine()
+SessionLocal = sessionmaker(autocommit= False, autoflush = False, bind = engine())
+Base =  declarative_base()
 
 class Livro(Base):
     __tablename__ = 'livros'
@@ -20,4 +20,4 @@ class Livro(Base):
     autor = Column(String)
 
 def init_db():
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine())
